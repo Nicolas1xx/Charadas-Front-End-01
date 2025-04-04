@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charada do Nicolas</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Bootstrap (opcional para estilização adicional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen px-4">
+
+  <div class="bg-gray-100 p-8 rounded-3xl shadow-2xl text-center w-full max-w-lg transition-all">
+    <h1 class="text-3xl font-bold mb-6 text-blue-800">Charada do Nicolas </h1>
+
+    <p class="text-lg font-medium text-gray-800 mb-6" id="charada-pergunta">Carregando charada...</p>
+
+    <input type="text" id="resposta-input"
+      class="form-control mb-4 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+      placeholder="Digite sua resposta aqui...">
+
+    <div class="mb-6" id="resposta-container">
+      <p class="text-gray-500">...</p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-3">
+      <button
+        class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition"
+        onclick="verResposta()"
+      >
+        Enviar Resposta
+      </button>
+      <button
+        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition"
+        onclick="verResposta()"
+      >
+        Ver Resposta
+      </button>
+      <button
+        class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded transition"
+        onclick="novaCharada()"
+      >
+        Nova Charada
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
