@@ -5,46 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Charada do Nicolas</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Bootstrap (opcional para estilização adicional) -->
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #121212;
+    }
+
+    .box-escura {
+      background-color: #2c2f33;
+      color: #f8f9fa;
+    }
+
+    .form-control {
+      background-color: #3a3d42;
+      border: none;
+      color: #fff;
+    }
+
+    .form-control::placeholder {
+      color: #bbb;
+    }
+
+    .form-control:focus {
+      background-color: #3a3d42;
+      color: #fff;
+      box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+    }
+
+    .btn-purple {
+      background-color: #6f42c1;
+      color: white;
+    }
+
+    .btn-purple:hover {
+      background-color: #5a32a3;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 flex items-center justify-center min-h-screen px-4">
+<body class="d-flex align-items-center justify-content-center min-vh-100">
 
-  <div class="bg-gray-100 p-8 rounded-3xl shadow-2xl text-center w-full max-w-lg transition-all">
-    <h1 class="text-3xl font-bold mb-6 text-blue-800">Charada do Nicolas </h1>
+  <div class="box-escura p-4 rounded shadow text-center w-100" style="max-width: 400px;">
+    <h1 class="h4 text-info mb-3">Charada do Nicolas</h1>
 
-    <p class="text-lg font-medium text-gray-800 mb-6" id="charada-pergunta">Carregando charada...</p>
+    <p id="charada-pergunta" class="mb-3">Carregando charada...</p>
 
-    <input type="text" id="resposta-input"
-      class="form-control mb-4 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-      placeholder="Digite sua resposta aqui...">
+    <input type="text" id="resposta-input" class="form-control mb-3" placeholder="Digite sua resposta...">
 
-    <div class="mb-6" id="resposta-container">
-      <p class="text-gray-500">...</p>
-    </div>
+    <div id="resposta-container" class="mb-3 text-muted">...</div>
 
-    <div class="flex flex-col sm:flex-row justify-center gap-3">
-      <button
-        class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition"
-        onclick="verResposta()"
-      >
-        Enviar Resposta
-      </button>
-      <button
-        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition"
-        onclick="verResposta()"
-      >
-        Ver Resposta
-      </button>
-      <button
-        class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded transition"
-        onclick="novaCharada()"
-      >
-        Nova Charada
-      </button>
+    <div class="d-grid gap-2">
+      <button class="btn btn-success" onclick="verResposta()">Enviar Resposta</button>
+      <button class="btn btn-primary" onclick="verResposta()">Ver Resposta</button>
+      <button class="btn btn-purple" onclick="novaCharada()">Nova Charada</button>
     </div>
   </div>
 
